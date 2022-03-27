@@ -55,6 +55,12 @@ class RegisController extends Controller
         return back();
     }
 
+    public function cetak($id){
+
+        $regi = DB::table('siswa')->where('id', $id)->first();
+        return view('Regis.cetak', compact('regi'));
+    }
+
     // public function cetak_pdf()
     // {
     // 	$regi = DB::table('siswa')->get();;

@@ -24,4 +24,6 @@ Route::get('regis/{id}/edit', [RegisController::class, 'edit']);
 Route::put('regis/{id}', [RegisController::class, 'update']);
 Route::delete('regis/{id}', [RegisController::class, 'destroy']);
 
+Route::get('regis/{id}', [RegisController::class, 'cetak']);
+
 // Route::get('/cetak', [RegisController::class, 'cetak_pdf']);

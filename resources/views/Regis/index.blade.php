@@ -82,6 +82,7 @@
                     <td>{{ $regi->jurusan }}</td>
                     <td class="d-flex">
                         <a href="/regis/{{$regi->id}}/edit" class="btn btn-primary">Edit</a>
+                        <a href="/regis/{{$regi->id}}" class="btn btn-secondary ms-2">Cetak</a>
                         <form action="/regis/{{$regi->id}}" method="post">
                             @csrf
                             @method('delete')
