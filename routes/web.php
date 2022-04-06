@@ -15,7 +15,7 @@ use App\Http\Controllers\RegisController;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('index');
 });
 
 Route::get('regis', [RegisController::class, 'index']);

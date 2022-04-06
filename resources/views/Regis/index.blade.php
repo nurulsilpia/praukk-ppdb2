@@ -1,51 +1,43 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>PPDB</title>
-    {{-- CSS BOOSTRAP --}}
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-</head>
-<body>
-<div class="container my-5">
+@extends('layouts.main')
+@section('container')
+    
+<div class="container" style="margin-top: 100px;">
     <h1 class="text-center mb-3">Form Formulir Pendaftaran Peserta Didik</h1>
-    <form action="/regis" method="post" class="mx-3 mb-3 card shadow-sm p-3">
-        <h1 class="mx-3">Form Pendaftaran</h1>
+    <form action="/regis" method="post" class="mx-3 mb-5 card shadow-sm p-3">
+        {{-- <h1 class="mx-3">Form Pendaftaran</h1> --}}
         @csrf
-        <div class="d-flex">
+        <div class="d-flex mt-3">
             <div class="col-md-6">
-                <div class="mx-3">
-                    <label for="exampleInputEmail1" class="form-label">Name</label>
+                <div class="mx-3 mb-3">
+                    <label for="exampleInputEmail1" class="form-label">Nama Lengkap</label>
                     <input type="text" class="form-control" name="nama" aria-describedby="nama">
                 </div>
-                <div class="mx-3">
-                    <label for="exampleInputEmail1" class="form-label">jenis Kelamin</label>
+                <div class="mx-3 mb-3">
+                    <label for="exampleInputEmail1" class="form-label">Jenis Kelamin</label>
                     <select class="form-select" name="jk" class="jk" aria-label="Default select example">
-                        <option selected>Jenis Kelamin</option>
+                        <option selected disabled>--Pilih Jenis Kelamin--</option>
                         <option value="Perempuan">Perempuan</option>
                         <option value="Laki-laki">Laki-laki</option>
                     </select>
                 </div>
-                <div class="mx-3">
-                    <label for="exampleInputEmail1" class="form-label">alamat</label>
+                <div class="mx-3 mb-3">
+                    <label for="exampleInputEmail1" class="form-label">Alamat</label>
                     <input type="text" class="form-control" name="alamat" aria-describedby="alamat">
                 </div>
             </div>
             <div class="mr-3 col-md-6">
-                <div class="mx-3">
-                    <label for="exampleInputEmail1" class="form-label">agama</label>
+                <div class="mx-3 mb-3">
+                    <label for="exampleInputEmail1" class="form-label">Agama</label>
                     <input type="text" class="form-control" name="agama" aria-describedby="agama">
                 </div>
-                <div class="mx-3">
-                    <label for="exampleInputEmail1" class="form-label">asal</label>
+                <div class="mx-3 mb-3">
+                    <label for="exampleInputEmail1" class="form-label">Asal SMP</label>
                     <input type="text" class="form-control" name="asal" aria-describedby="asal">
                 </div>
-                <div class="mx-3">
+                <div class="mx-3 mb-3">
                     <label for="exampleInputEmail1" class="form-label">Jurusan</label>
                     <select class="form-select" name="jurusan" class="jurusan" aria-label="Default select example">
-                        <option selected>Jurusan</option>
+                        <option selected disabled>--Pilih Jurusan--</option>
                         <option value="Rekayasa Perangkat Lunak">Rekayasa Perangkat Lunak</option>
                         <option value="Multimedia">Multimedia</option>
                         <option value="Teknik Komputer dan Jaringan">Teknik Komputer dan Jaringan</option>
@@ -56,16 +48,16 @@
         <button type="submit" class="btn btn-primary m-3">Submit</button>
       </form>
 
-    <table class="table table-light">
+    <table class="table table-light" id="tableAll">
         <thead>
             <tr>
-              <th scope="col">#</th>
-              <th scope="col">nama</th>
-              <th scope="col">jk</th>
-              <th scope="col">alamat</th>
-              <th scope="col">agama</th>
-              <th scope="col">asal</th>
-              <th scope="col">jurusan</th>
+              <th scope="col">No</th>
+              <th scope="col">Nama</th>
+              <th scope="col">JK</th>
+              <th scope="col">Alamat</th>
+              <th scope="col">Agama</th>
+              <th scope="col">Asal SMP</th>
+              <th scope="col">Jurusan</th>
               <th scope="col">Action</th>
             </tr>
         </thead>
@@ -73,7 +65,7 @@
 
             @foreach ($regiss as $index => $regi)
                 <tr>
-                    <td>{{ $index + 1 }}</td>
+                    <td>{{ $loop->iteration }}</td>
                     <td>{{ $regi->nama }}</td>
                     <td>{{ $regi->jk }}</td>
                     <td>{{ $regi->alamat }}</td>
@@ -81,7 +73,7 @@
                     <td>{{ $regi->asal }}</td>
                     <td>{{ $regi->jurusan }}</td>
                     <td class="d-flex">
-                        <a href="/regis/{{$regi->id}}/edit" class="btn btn-primary">Edit</a>
+                        <a href="/regis/{{$regi->id}}/edit" class="btn btn-md btn-primary">Edit</a>
                         <a href="/regis/{{$regi->id}}" class="btn btn-secondary ms-2">Cetak</a>
                         <form action="/regis/{{$regi->id}}" method="post">
                             @csrf
@@ -93,13 +85,7 @@
             @endforeach
 
         </tbody>
-            {{-- <a href="/regis">Cetak PDF</a> --}}
 
     </table>
 </div>
-
-{{-- BOOSTRAP JS --}}
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
-
-</body>
-</html>
+@endsection
