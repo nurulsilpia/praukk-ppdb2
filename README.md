@@ -4,3 +4,5 @@
 - create database
 - run php artisan migrate
 - run php artisan serve
+
+You can try this app [here](https://ujikom-ppdb.herokuapp.com/)

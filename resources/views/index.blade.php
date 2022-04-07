@@ -47,10 +47,11 @@
 <section class="mt-5">
     <h1 class="text-center">Welcome To SMK Wikrama</h1>
     <div class="container my-5">
-        <div class="">
-            <div class="row align-items-center justify-content-center justify-content-lg-between">
-                <div class="col-lg-6 col-md-10">
-                    SMK Wikrama Bogor membuka 7 kompetensi keahlian, diantaranya: 
+        
+        {{-- Slider --}}
+        <div class="row mt-5 align-items-center justify-content-center justify-content-lg-between">
+            <div class="col-lg-7 col-md-7 col-sm-7">
+                SMK Wikrama Bogor membuka 7 kompetensi keahlian, diantaranya: 
                     <ol>
                         <li>Otomatisasi dan Tata Kelola Perkantoran</li>
                         <li>Teknik Komputer dan Jaringan</li>
@@ -60,11 +61,41 @@
                         <li>Tata Boga</li>
                         <li>Perhotelan</li>
                     </ol>
-                </div>
-                <div class="col-lg-5 col-md-6">
-                    <div class="image">
-                        <img src="asset/img/lapangan.jpeg" class="rounded shadow">
+                    <p class="text-justify">
+                        SMK Wikrama menjadi sekolah kejuruan teladan berbudaya lingkungan yang unggul dalam pendidikan karakter yang berakhlaq mulia dengan kompetensi di bidang bisnis dan manajemen serta teknologi informasi dan komunikasi.
+                    </p> 
+            </div>
+            <div class="col-lg-5 col-md-5 col-sm-5 imgframe">
+                <!--Carousel-->
+                <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-indicators">
+                      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3" aria-label="Slide 4"></button>
                     </div>
+                    <div class="carousel-inner">
+                      <div class="carousel-item active">
+                        <img src="/asset/img/tbg.jpeg" class="d-block w-100" alt="...">
+                      </div>
+                      <div class="carousel-item">
+                        <img src="/asset/img/hotel.jpeg" class="d-block w-100" alt="...">
+                      </div>
+                      <div class="carousel-item">
+                        <img src="/asset/img/mmd.jpeg" class="d-block w-100" alt="...">
+                      </div>
+                      <div class="carousel-item">
+                        <img src="/asset/img/bdp.jpeg" class="d-block w-100" alt="...">
+                      </div>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+                      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                      <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+                      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                      <span class="visually-hidden">Next</span>
+                    </button>
                 </div>
             </div>
         </div>
