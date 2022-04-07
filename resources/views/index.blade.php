@@ -76,16 +76,16 @@
                     </div>
                     <div class="carousel-inner">
                       <div class="carousel-item active">
-                        <img src="/asset/img/tbg.jpeg" class="d-block w-100" alt="...">
+                        <img src="/asset/img/tbg.jpeg" class="d-block w-100" class="rounded shadow">
                       </div>
                       <div class="carousel-item">
-                        <img src="/asset/img/hotel.jpeg" class="d-block w-100" alt="...">
+                        <img src="/asset/img/hotel.jpeg" class="d-block w-100" class="rounded shadow">
                       </div>
                       <div class="carousel-item">
-                        <img src="/asset/img/mmd.jpeg" class="d-block w-100" alt="...">
+                        <img src="/asset/img/mmd.jpeg" class="d-block w-100" class="rounded shadow">
                       </div>
                       <div class="carousel-item">
-                        <img src="/asset/img/bdp.jpeg" class="d-block w-100" alt="...">
+                        <img src="/asset/img/bdp.jpeg" class="d-block w-100" class="rounded shadow">
                       </div>
                     </div>
                     <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
