@@ -14,14 +14,14 @@ return new class extends Migration
     public function up()
     {
         Schema::create('siswa', function (Blueprint $table) {
-            $table->id()->autoIncrement();
-            $table->string('nama', 255);
-            $table->string('jk', 11);
-            $table->text('alamat', 100);
-            $table->string('agama', 36);
-            $table->string('asal', 36);
-            $table->text('jurusan', 36);
-            $table->timestamp('last_used_at');
+            $table->id();
+            $table->string('noReg');
+            $table->string('nama');
+            $table->string('jk');
+            $table->text('alamat');
+            $table->string('agama');
+            $table->string('asal');
+            $table->text('jurusan');
             $table->timestamps();
         });
     }

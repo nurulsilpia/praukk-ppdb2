@@ -19,6 +19,7 @@ class RegisController extends Controller
     public function store(Request $request)
     {
         DB::table('siswa')->insert([
+            'noReg' => $request->noReg,
             'nama' => $request->nama,
             'jk' => $request->jk,
             'alamat' => $request->alamat,
@@ -27,7 +28,7 @@ class RegisController extends Controller
             'jurusan' => $request->jurusan,
         ]);
 
-        return redirect()->back();
+        return redirect()->back()->with('success', 'Registrasi Berhasil Di Kirim!');
     }
 
     public function edit($id){
@@ -39,6 +40,7 @@ class RegisController extends Controller
 
     public function update(Request $request, $id){
         DB::table('siswa')->where('id', $id)->update([
+            'noReg' => $request->noReg,
             'nama' => $request->nama,
             'jk' => $request->jk,
             'alamat' => $request->alamat,
@@ -46,13 +48,13 @@ class RegisController extends Controller
             'asal' => $request->asal,
             'jurusan' => $request->jurusan,
         ]);
-        return redirect('regis');
+        return redirect('/regis')->with('success', 'Data Registrasi Berhasil Di Edit!');
     }
 
     public function destroy($id)
     {
         DB::table('siswa')->where('id', $id)->delete();
-        return back();
+        return back()->with('danger', 'Data Registrasi Berhasil Di Hapus!');
     }
 
     public function cetak($id){
@@ -60,13 +62,4 @@ class RegisController extends Controller
         $regi = DB::table('siswa')->where('id', $id)->first();
         return view('Regis.cetak', compact('regi'));
     }
-
-    // public function cetak_pdf()
-    // {
-    // 	$regi = DB::table('siswa')->get();;
-  
-    //     $pdf = PDF::loadView('index', ['regi' => $regi]);
-        
-    //     return $pdf->download('ppdb.pdf');
-    // }
 }

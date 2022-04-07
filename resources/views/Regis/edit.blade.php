@@ -9,6 +9,10 @@
         <div class="d-flex">
             <div class="col-md-6">
                 <div class="mx-3 mb-3">
+                    <label for="exampleInputEmail1" class="form-label">Nomor Registrasi</label>
+                    <input type="text" class="form-control" value="{{$regi->noReg}}" name="noReg" aria-describedby="noReg">
+                </div>
+                <div class="mx-3 mb-3">
                     <label for="exampleInputEmail1" class="form-label">Nama</label>
                     <input type="text" class="form-control" value="{{$regi->nama}}" name="nama" aria-describedby="nama">
                 </div>
@@ -20,16 +24,13 @@
                         <option value="Laki-laki" <?php if($regi->jk == 'Laki-laki'){ echo 'selected';}?>>Laki-laki</option>
                     </select>
                 </div>
-                <div class="mx-3 mb-3">
-                      <label for="exampleInputEmail1" class="form-label">Alamat</label>
-                      <input type="text" class="form-control" value="{{$regi->alamat}}" name="alamat" aria-describedby="alamat">
-                </div>
-            </div>
-            <div class="mr-3 col-md-6">
+                
                 <div class="mx-3 mb-3">
                     <label for="exampleInputEmail1" class="form-label">Agama</label>
                     <input type="text" class="form-control" value="{{$regi->agama}}" name="agama" aria-describedby="agama">
                 </div>
+            </div>
+            <div class="mr-3 col-md-6">
                 <div class="mx-3 mb-3">
                     <label for="exampleInputEmail1" class="form-label">Asal SMP</label>
                     <input type="text" class="form-control" value="{{$regi->asal}}" name="asal" aria-describedby="asal">
@@ -41,7 +42,15 @@
                         <option value="Rekayasa Perangkat Lunak" <?php if($regi->jurusan == 'Rekayasa Perangkat Lunak'){ echo 'selected';}?>>Rekayasa Perangkat Lunak</option>
                         <option value="Multimedia" <?php if($regi->jurusan == 'Multimedia'){ echo 'selected';}?>>Multimedia</option>
                         <option value="Teknik Komputer dan Jaringan" <?php if($regi->jurusan == 'Teknik Komputer dan Jaringan'){ echo 'selected';}?>>Teknik Komputer dan Jaringan</option>
+                        <option value="Otomatisasi Tata Kelola Perkantoran" <?php if($regi->jurusan == 'Otomatisasi Tata Kelola Perkantoran'){ echo 'selected';}?>>Otomatisasi Tata Kelola Perkantoran</option>
+                        <option value="Bisnis Daring Pemasaran" <?php if($regi->jurusan == 'Bisnis Daring Pemasaran'){ echo 'selected';}?>>Bisnis Daring Pemasaran</option>
+                        <option value="Perhotelan" <?php if($regi->jurusan == 'Perhotelan'){ echo 'selected';}?>>Perhotelan</option>
+                        <option value="Tata Boga" <?php if($regi->jurusan == 'Tata Boga'){ echo 'selected';}?>>Tata Boga</option>
                     </select>
+                </div>
+                <div class="mx-3 mb-3">
+                    <label for="exampleInputEmail1" class="form-label">Alamat</label>
+                    <input type="textarea" class="form-control" value="{{$regi->alamat}}" name="alamat" aria-describedby="alamat" style="height: 124px;">
                 </div>
             </div>
         </div>
