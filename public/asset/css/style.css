@@ -330,7 +330,7 @@
   }
   
   /*Active menu*/
-  .active::after {
+  .nav__item .active::after {
     position: absolute;
     content: '';
     width: 100%;
