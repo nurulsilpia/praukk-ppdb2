@@ -32,6 +32,11 @@
                     <table>
                         <h2 class="tengah">Download Data Peserta Didik {{$regi->nama}}</h2>
                             <tr>
+                                <td>Nomor Registrasi</td>
+                                <td>:</td>
+                                <td>{{$regi->noReg}}</td>
+                            </tr>
+                            <tr>
                                 <td>Nama Lengkap</td>
                                 <td>:</td>
                                 <td>{{$regi->nama}}</td>
